@@ -45,7 +45,7 @@ public class MoveInstructions : MonoBehaviour {
         {
             Vector3 position = positions[i];
             float rangeSquared = ranges[i];
-            float dx = position.x - transform.position.x, dy = position.y - transform.position.y, distanceSquared = dx * dx + dy * dy;
+            float dx = position.x - transform.position.x, dy = position.z - transform.position.z, distanceSquared = dx * dx + dy * dy;
 
             if (distanceSquared <= rangeSquared)
             {
