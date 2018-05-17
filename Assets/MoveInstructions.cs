@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class MoveInstructions : MonoBehaviour {
 
-    public Vector3[] positions;
-    public float[] ranges;
-    public Vector3[] directions;
+    public List<Vector3> positions;
+    public List<float> ranges;
+    public List<Vector3> directions;
 
     public float moveSpeed = 5.0f;
 
@@ -18,7 +18,7 @@ public class MoveInstructions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        int pl = positions.Length, rl = ranges.Length, dl = directions.Length;
+        int pl = positions.Count, rl = ranges.Count, dl = directions.Count;
         dataLength = pl < rl ? pl : rl;
         dataLength = dl < dataLength ? dl : dataLength;
 
@@ -56,4 +56,5 @@ public class MoveInstructions : MonoBehaviour {
 
         if (changeDetected) moveDirection = commandDirection.normalized;
     }
+    
 }
